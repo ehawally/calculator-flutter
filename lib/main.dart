@@ -5,22 +5,32 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool isDark = true;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Calculadora',
       theme: ThemeData(
-        brightness: Brightness.dark, scaffoldBackgroundColor: const Color(0xFF0B0B12)
+        brightness: isDark ? Brightness.dark : Brightness.light,
+        scaffoldBackgroundColor:
+            isDark ? const Color(0xFF0B0B12) : Colors.white,
       ),
-      home: const CalculadoraHomepage(),
-   
-   
-
+      home: CalculadoraHomepage(
+        onThemeChanged: () {
+          setState(() {
+            isDark = !isDark;
+          });
+        },
+      ),
     );
   }
 }
-

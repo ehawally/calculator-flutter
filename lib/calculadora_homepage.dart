@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'botoes.dart';
 class CalculadoraHomepage extends StatefulWidget {
-  const CalculadoraHomepage({super.key});
+  final VoidCallback onThemeChanged;
+
+  const CalculadoraHomepage({
+    super.key,
+    required this.onThemeChanged,
+  });
 
   @override
   State<CalculadoraHomepage> createState() => _CalculadoraHomepageState();
@@ -19,7 +24,17 @@ class _CalculadoraHomepageState extends State<CalculadoraHomepage> {
     return Scaffold(
       body: SafeArea(
         bottom: false,
-        child: Column(children: [
+        child: Column(
+         children: [
+          Align(
+           alignment: Alignment.topRight,
+            child: IconButton(
+        onPressed: widget.onThemeChanged,
+        icon: const Icon(Icons.light_mode),
+      ),
+    ),
+
+    // resultado[
           // resultado
           Expanded(
             child: SingleChildScrollView(
