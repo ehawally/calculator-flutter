@@ -1,6 +1,6 @@
-# flutter_application_1
+# Flutter Calculator!
 
-A new Flutter project.
+A calculator coded on dart that used flutter as its ui toolkit!.
 
 ## Getting Started
 
