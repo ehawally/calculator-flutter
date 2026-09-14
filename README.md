@@ -1,7 +1,7 @@
 # Flutter Calculator!
 
 A calculator coded on dart that used flutter as its ui toolkit!.
-![A quick demonstration!] (CaclculatorDemo.gif)
+![A quick demonstration!] (CalculatorDemo.gif)
 
 ## Getting Started
 
